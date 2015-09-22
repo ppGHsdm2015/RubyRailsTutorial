@@ -1,3 +1,3 @@
-class RschMethod < ActiveRecord::Base
-    attr_accessible :methodID, :methodname
+class Rschmethod < ActiveRecord::Base
+    validates :methodname, presence: true 
 end

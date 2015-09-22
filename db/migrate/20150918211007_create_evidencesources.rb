@@ -1,7 +1,6 @@
-class CreateEvidenceSource < ActiveRecord::Migration
+class CreateEvidencesources < ActiveRecord::Migration
   def change
-    create_table :evidence_sources, id: false do |t|
-      t.integer 'articleID', :null => false	
+    create_table :evidencesources do |t|
       t.string 'title',	:limit => '200', :null => false	
       t.string 'author',	:limit => '200', :null => false	
       t.datetime 'year'			
@@ -12,7 +11,6 @@ class CreateEvidenceSource < ActiveRecord::Migration
       t.string 'pageNo',	:limit => '200'			
       t.integer 'submitter',	:null => false	
       t.datetime 'submittedOn', :null => false	
-      t.primary_key :articleID
     end
   end
 end

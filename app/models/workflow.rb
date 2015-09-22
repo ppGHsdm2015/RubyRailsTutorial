@@ -1,3 +1,3 @@
 class Workflow < ActiveRecord::Base
-    attr_accessible :workflowID, :workflowname
-end
+  validates :workflowname, presence: true
+end  

@@ -1,3 +1,4 @@
-class SeMethgy < ActiveRecord::Base
-	attr_accessible :se_methgyID, :se_methgyname, :se_methgydesc
+class Semethgy < ActiveRecord::Base
+	validates :semethgyname, presence: true
+	validates :semethgydesc, presence: false
 end

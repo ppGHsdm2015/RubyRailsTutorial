@@ -1,7 +1,6 @@
 class CreateUsers < ActiveRecord::Migration
   def change
-    create_table :users, id: false do |t|
-      t.integer 'userID',	:null => false
+    create_table :users do |t|
       t.string 'username',	:limit => '25',	:null => false
       t.string 'password',	:limit => '15', :null => false
       t.string 'fullname',	:limit => '150', :null => false
@@ -10,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration
       t.integer 'roleID'
       t.string 'gender',  :limit => '1'
       t.integer 'age'
-      t.primary_key :userID
     end
   end
 end

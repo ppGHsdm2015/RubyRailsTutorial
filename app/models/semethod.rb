@@ -1,3 +1,3 @@
-class SeMethod < ActiveRecord::Base
-    attr_accessible :se_methodID, :se_methodname
+class Semethod < ActiveRecord::Base
+    validates :semethodname, presence: true
 end

@@ -1,14 +1,12 @@
 class CreateRoles < ActiveRecord::Migration
   def change
-    create_table :roles, id: false do |t|
-      t.integer 'roleID', :null => false
+    create_table :roles do |t|
       t.string 'rolename' 
-      t.string 'edit_user', :limit => '1', :default => 'n'
-      t.string 'modify_masters', :limit => '1', :default => 'n'
-      t.string 'allow_mod', :limit => '1', :default => 'n'
-      t.string 'allow_analysis', :limit => '1', :default => 'n'
-      t.string 'allow_scrh', :limit => '1', :default => 'n'
-      t.primary_key :roleID
+      t.string 'edituser', :limit => '1', :default => 'n'
+      t.string 'modifymasters', :limit => '1', :default => 'n'
+      t.string 'allowmod', :limit => '1', :default => 'n'
+      t.string 'allowanalysis', :limit => '1', :default => 'n'
+      t.string 'allowupload', :limit => '1', :default => 'n'
     end
   end
 end

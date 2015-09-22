@@ -1,3 +1,3 @@
-class RschParticipant < ActiveRecord::Base
-    attr_accessible :partID, :partname
+class Rschparticipant < ActiveRecord::Base
+    validates :partname, presence: true
 end

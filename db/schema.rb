@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150918211317) do
+ActiveRecord::Schema.define(version: 20150922054346) do
 
-  create_table "articles_workflows", force: :cascade do |t|
-    t.integer  "articleID",   null: false
-    t.integer  "workflow_ID", null: false
+  create_table "articlesworkflows", force: :cascade do |t|
+    t.integer  "articleid",   null: false
+    t.integer  "workflowid",  null: false
     t.integer  "implementor", null: false
-    t.datetime "impl_On",     null: false
+    t.datetime "implOn",      null: false
   end
 
-  create_table "evidence_items", primary_key: "ev_type_ID", force: :cascade do |t|
-    t.string "ev_type_name"
+  create_table "evidenceitems", force: :cascade do |t|
+    t.string "evtypename"
   end
 
-  create_table "evidence_sources", primary_key: "articleID", force: :cascade do |t|
+  create_table "evidencesources", force: :cascade do |t|
     t.string   "title",       limit: 200, null: false
     t.string   "author",      limit: 200, null: false
     t.datetime "year"
@@ -37,33 +37,33 @@ ActiveRecord::Schema.define(version: 20150918211317) do
     t.datetime "submittedOn",             null: false
   end
 
-  create_table "roles", primary_key: "roleID", force: :cascade do |t|
+  create_table "roles", force: :cascade do |t|
     t.string "rolename"
-    t.string "edit_user",      limit: 1, default: "n"
-    t.string "modify_masters", limit: 1, default: "n"
-    t.string "allow_mod",      limit: 1, default: "n"
-    t.string "allow_analysis", limit: 1, default: "n"
-    t.string "allow_scrh",     limit: 1, default: "n"
+    t.string "edituser",      limit: 1, default: "n"
+    t.string "modifymasters", limit: 1, default: "n"
+    t.string "allowmod",      limit: 1, default: "n"
+    t.string "allowanalysis", limit: 1, default: "n"
+    t.string "allowupload",   limit: 1, default: "n"
   end
 
-  create_table "rsch_methods", primary_key: "methodID", force: :cascade do |t|
+  create_table "rschmethods", force: :cascade do |t|
     t.string "methodname", limit: 200
   end
 
-  create_table "rsch_participants", primary_key: "partID", force: :cascade do |t|
+  create_table "rschparticipants", force: :cascade do |t|
     t.string "partname"
   end
 
-  create_table "se_methgies", primary_key: "se_methgyID", force: :cascade do |t|
-    t.string "se_methgyname"
-    t.string "se_methgydesc"
+  create_table "semethgies", force: :cascade do |t|
+    t.string "semethgyname"
+    t.string "semethgydesc"
   end
 
-  create_table "se_methods", primary_key: "se_methodID", force: :cascade do |t|
-    t.string "se_methodname"
+  create_table "semethods", force: :cascade do |t|
+    t.string "semethodname"
   end
 
-  create_table "users", primary_key: "userID", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string  "username",    limit: 25,  null: false
     t.string  "password",    limit: 15,  null: false
     t.string  "fullname",    limit: 150, null: false
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20150918211317) do
     t.integer "age"
   end
 
-  create_table "workflows", primary_key: "workflowID", force: :cascade do |t|
+  create_table "workflows", force: :cascade do |t|
     t.string "workflowname"
   end
 

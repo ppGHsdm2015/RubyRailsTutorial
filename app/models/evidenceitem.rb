@@ -1,3 +1,3 @@
-class EvidenceItem < ActiveRecord::Base
-    attr_accessible :ev_type_ID, :ev_type_name
+class Evidenceitem < ActiveRecord::Base
+    validates :evtypename, presence: true 
 end

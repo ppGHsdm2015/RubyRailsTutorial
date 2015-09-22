@@ -1,3 +1,8 @@
 class Role < ActiveRecord::Base
-	attr_accessible :roleID, :rolename, :edit_user, :modify_masters, :allow_mod, :allow_analysis, :allow_scrh
+	validates :rolename, presence: true
+	validates :edituser, presence: true 
+	validates :modifymasters, presence: true 
+	validates :allowmod, presence: true
+	validates :allowanalysis, presence: true
+	validates :allowupload, presence: true
 end
