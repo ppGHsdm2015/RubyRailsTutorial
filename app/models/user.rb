@@ -1,11 +1,6 @@
 class User < ActiveRecord::Base
-    
-   validates :username, presence: true	
-   validates :password, presence: true
-   validates :fullname,	presence: true
-   validates :email, presence: true
-   validates :affiliation, presence: false
-   validates :roleID, presence: true 
-   validates :gender, presence: false
-   validates :age, presence: false
-end  
+  authenticates_with_sorcery!
+  validates :password, length: { minimum: 8 }
+  validates :password, confirmation: true
+  validates :email, uniqueness: true, email_format: { message: 'has invalid format' }
+end

@@ -1,4 +1,4 @@
-$navbar-default-bg: #312313;
+$navbar-default-bg: #ABAAAA;
 $light-orange: #ff8c00;
 $navbar-default-color: $light-orange;
 
@@ -33,3 +33,9 @@ h2{
     text-align: left;
     
 }
+
+a:link { font-weight: bold; color: red; }
+a { color: #00F; font-style: italic;}
+a:visited { color: #56C94A; }
+a:hover { color: #56C94A; }
+a:active { color: #56C94A; }

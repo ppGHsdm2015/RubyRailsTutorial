@@ -1,0 +1,45 @@
+<h1>Registration</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :fullname %>
+    <%= f.text_field :fullname, class: 'form-control', required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control', required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control', required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: 'form-control', required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :organisation %>
+    <%= f.text_field :organisation, class: 'form-control', required: false %>
+  </div>
+  <div class="form-group">
+    <%= f.label :gender, "I am  " %>
+    <%= f.radio_button :gender, 'M', checked: true %>Male
+    <%= f.radio_button :gender, 'F' %>Female
+ </div>
+ <div class="form-group">
+    <%= f.label :age %>
+    <%= f.text_field :age, class: 'form-control', required: false %>
+  </div>
+ <%= f.submit 'Register', class: 'btn btn-primary btn-lg' %>
+<% end %>

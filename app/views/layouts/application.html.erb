@@ -7,15 +7,95 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <!-- MAIN FRAME -->
+  <table align="center" width="100%" border="0">
+    <!-- MAIN FRAME - ROW ONE -->
+    <tr>
+      <td class="side-margin"></td>
+      <td>
+        <h1>
+        <table class="fill-space" border="0">
+          <tr>
+            <td align="left" width="400px"><img src="assets/SerlerLogo.gif" alt="Logo" style="width:304px;height:228px;"></td>
+            <td><img src="assets/FullTitle.gif" alt="Title"></td>
+          </tr>
+        </table>
+      </h1>
+      </td>
+      <td class="side-margin"></td>
+    </tr>
+    
+    
+    <tr>
+      <td class="side-margin"></td>
+      <td>
+        <table class="fill-space" border="0">
+          <tr >
+            <td class="fill-space"><img src="assets/border.gif" alt="Title"></td>
+          </tr>
+        </table>
+      </td>
+      <td class="side-margin"></td>
+    </tr>
+    
+    
+    <tr class="nav-area">
+      <td class="side-margin"></td>
+      <td>
+        <nav class="navbar navbar-inverse custom-nav">
+          <div class="container">
+              <div id="navbar">
+              <ul class="nav navbar-nav">
+              <% if current_user %>
+                 <li><%= link_to 'Secret Page', secret_path %></li>
+              <% else %>
+                <li><%= link_to 'Register', sign_up_path %></li>
+                <li><%= link_to 'Log In', log_in_path %></li>
+              <% end %>
+              </ul>
+              <% if current_user %>
+                <ul class="nav navbar-nav pull-right">
+                  <li><span><%= current_user.name %></span></li>
+                  <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+        </nav>
+      </td>
+      <td class="side-margin"></td>
+    </tr>
+        
+      
+    <!-- MAIN FRAME - ROW THREE -->
+    <tr class="content-area">
+      <td class="side-margin"></td>
+      <td>
+        <table class="content-area" border="0">
+          <tr >
+            <td colspan="2" align="center" valign="top">
+              <div class="container">
+                <% flash.each do |key, value| %>
+                <div class="alert alert-<%= key %>">
+                  <%= value %>
+                </div>
+                <% end %>
+               <%= yield %>  
+               </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td class="side-margin"></td>
+    </tr>
+  </table>
    
-  
-   <div class="page-header">
-  <h1>WELCOME TO SERLER</h1>
-</div>
-  
-  <div class="container">
-  
-<%= yield %>
+   
+   
+   
+   
+
+
 </div>
 </body>
 </html>

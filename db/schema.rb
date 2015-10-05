@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922054346) do
+ActiveRecord::Schema.define(version: 20151005202614) do
 
   create_table "articlesworkflows", force: :cascade do |t|
     t.integer  "articleid",   null: false
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(version: 20150922054346) do
     t.integer  "implementor", null: false
     t.datetime "implOn",      null: false
   end
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "evidenceitems", force: :cascade do |t|
     t.string "evtypename"
@@ -64,15 +80,23 @@ ActiveRecord::Schema.define(version: 20150922054346) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string  "username",    limit: 25,  null: false
-    t.string  "password",    limit: 15,  null: false
-    t.string  "fullname",    limit: 150, null: false
-    t.string  "email",       limit: 150
-    t.string  "affiliation", limit: 200
-    t.integer "roleID"
-    t.string  "gender",      limit: 1
-    t.integer "age"
+    t.string   "email",                                               null: false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.string   "fullname",                    limit: 150,             null: false
+    t.string   "organisation",                limit: 200
+    t.integer  "roleID",                                  default: 1
+    t.string   "gender",                      limit: 1
+    t.integer  "age"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "activation_state"
+    t.string   "activation_token"
+    t.datetime "activation_token_expires_at"
   end
+
+  add_index "users", ["activation_token"], name: "index_users_on_activation_token"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
   create_table "workflows", force: :cascade do |t|
     t.string "workflowname"
