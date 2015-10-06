@@ -63,3 +63,8 @@
   width:100%;
   background-color:white;
 }
+
+.form-content{
+  width: 300px;
+  padding: 5px;
+}

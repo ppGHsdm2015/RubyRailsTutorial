@@ -5,9 +5,12 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.activation_needed_email.subject
   #
-  def activation_needed_email
+  default from: 'infoserler@gmail.com'
+  
+  def activation_needed_email(user)
     @user = user
-    mail(to: user.email, from:"123@serler.com", subject: "Account activation")
+    @url  = "https://my-serler-premila-2.c9.io/users/#{user.activation_token}/activate"
+    mail(to: @user.email, subject: "SERLER Account activation")
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -15,8 +18,9 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.activation_success_email.subject
   #
-  def activation_success_email
+  def activation_success_email(user)
     @user = user
-    mail(to: user.email, subject: "Your account is now activated")
+    @url = "https://my-serler-premila-2.c9.io"
+    mail(to: @user.email, subject: "Your account is now activated")
   end
 end

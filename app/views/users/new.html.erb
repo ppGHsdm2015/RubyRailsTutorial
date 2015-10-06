@@ -12,34 +12,34 @@
       </ul>
     </div>
   <% end %>
+  
   <div class="form-group">
-    <%= f.label :fullname %>
-    <%= f.text_field :fullname, class: 'form-control', required: true %>
+    <%= f.label :fullname %><div></div>
+    <%= f.text_field :fullname, class: 'form-control form-content', required: true %>
   </div>
   <div class="form-group">
     <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control', required: true %>
+    <%= f.email_field :email, class: 'form-control form-content', required: true %>
   </div>
   <div class="form-group">
     <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control', required: true %>
+    <%= f.password_field :password, class: 'form-control form-content', required: true %>
   </div>
   <div class="form-group">
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: 'form-control', required: true %>
+    <%= f.password_field :password_confirmation, class: 'form-control form-content', required: true %>
   </div>
   <div class="form-group">
     <%= f.label :organisation %>
-    <%= f.text_field :organisation, class: 'form-control', required: false %>
+    <%= f.text_field :organisation, class: 'form-control form-content', required: false %>
   </div>
   <div class="form-group">
-    <%= f.label :gender, "I am  " %>
     <%= f.radio_button :gender, 'M', checked: true %>Male
     <%= f.radio_button :gender, 'F' %>Female
  </div>
  <div class="form-group">
     <%= f.label :age %>
-    <%= f.text_field :age, class: 'form-control', required: false %>
+    <%= f.text_field :age, class: 'form-control form-content', required: false %>
   </div>
  <%= f.submit 'Register', class: 'btn btn-primary btn-lg' %>
 <% end %>

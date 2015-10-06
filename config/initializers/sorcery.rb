@@ -4,17 +4,6 @@
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
 Rails.application.config.sorcery.submodules = [:user_activation]
 
-module Sorcery
-  module Model
-    module InstanceMethods
-      def generic_send_email(method, mailer)
-        config = sorcery_config
-        mail = config.send(mailer).delay.send(config.send(method), self)
-      end
-    end
-  end
-end
-
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
   # -- core --
@@ -470,4 +459,18 @@ Rails.application.config.sorcery.configure do |config|
   # This line must come after the 'user config' block.
   # Define which model authenticates with sorcery.
   config.user_class = "User"
+  
+  module Sorcery
+    module Model
+      module InstanceMethods
+        def generic_send_email(method, mailer)
+          config = sorcery_config
+          mail = config.send(mailer).delay.send(config.send(method), self)
+        end
+      end
+    end
+  end
+
+  
+  
 end
