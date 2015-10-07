@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: [:new, :create, :activate]
   def new
     @user = User.new
   end
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.activation_needed_email(@user).deliver_later
       login(params[:user][:email], params[:user][:password])
-      flash[:success] = 'Please check your email to activate your user account.'
+      flash[:success] = 'Please check your email to activate your user account'
       redirect_to root_path
     else
       render 'new'

@@ -177,13 +177,13 @@ Rails.application.config.sorcery.configure do |config|
     # specify username attributes, for example: [:username, :email].
     # Default: `[:email]`
     #
-    # user.username_attribute_names =
+    #user.username_attribute_names = [:email]
 
 
     # change *virtual* password attribute, the one which is used until an encrypted one is generated.
     # Default: `:password`
     #
-    # user.password_attribute_name =
+    #user.password_attribute_name = [:password]
 
 
     # downcase the username before trying to authenticate, default is false
@@ -258,13 +258,13 @@ Rails.application.config.sorcery.configure do |config|
     # the attribute name to hold activation state (active/pending).
     # Default: `:activation_state`
     #
-    # user.activation_state_attribute_name =
+    # user.activation_state_attribute_name = 
 
 
     # the attribute name to hold activation code (sent by email).
     # Default: `:activation_token`
     #
-    # user.activation_token_attribute_name =
+    # user.activation_token_attribute_name = 
 
 
     # the attribute name to hold activation code expiration date.
@@ -290,7 +290,7 @@ Rails.application.config.sorcery.configure do |config|
     # manually handle how and when email is sent.
     # Default: `false`
     #
-    user.activation_mailer_disabled = false
+    user.activation_mailer_disabled = true
 
 
     # activation needed email method on your mailer class.
@@ -302,7 +302,7 @@ Rails.application.config.sorcery.configure do |config|
     # activation success email method on your mailer class.
     # Default: `:activation_success_email`
     #
-    # user.activation_success_email_method_name =
+    user.activation_success_email_method_name = nil
 
 
     # do you want to prevent or allow users that did not activate by email to login?

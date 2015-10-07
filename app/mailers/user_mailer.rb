@@ -9,7 +9,7 @@ class UserMailer < ApplicationMailer
   
   def activation_needed_email(user)
     @user = user
-    @url  = "https://my-serler-premila-2.c9.io/users/#{user.activation_token}/activate"
+    @url  = "https://my-serler-premila-2.c9.io/users/#{user.activation_token}/activate?id=#{user.id}"
     mail(to: @user.email, subject: "SERLER Account activation")
   end
 
