@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   
   root 'sessions#new'
+  
   resources :users, only: [:new, :create] do
     member do
       get :activate
     end
   end
+  
   get '/secret', to: 'pages#index', as: :secret
   get '/sign_up', to: 'users#new', as: :sign_up
   match ':controller(/:action(/:id))', :via => :get
