@@ -28,6 +28,7 @@
 .my-btn{
     background: #13AD02;
     color: #ffffff;
+    border-color: gray; 
 }
 
 .my-btn:hover { 
@@ -44,8 +45,42 @@
   height: 20px;
 }
 
+.navbar-nav{
+  color: #006699; text-decoration: underline;
+}
+
+.vlist {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.llist {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.llistitem {
+    background-repeat: no-repeat;
+    background-position: 0px center; 
+    padding-left: 20px; 
+    float: left;
+    padding-top: 10px; 
+    text-decoration: none;
+}
+
+
+
+.errormsg {
+   color: red;
+   text-align: center;
+}
+
+
+
 .side-margin{
-  width:200px;
+  width:300px;
   background-color:gray;
 }
 

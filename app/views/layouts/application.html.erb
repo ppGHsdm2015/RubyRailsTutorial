@@ -45,18 +45,17 @@
         <nav class="navbar navbar-inverse custom-nav">
           <div class="container">
               <div id="navbar">
-              <ul class="nav navbar-nav">
+              <ul class="llist">
               <% if current_user %>
-                 <li><%= link_to 'Secret Page', secret_path %></li>
+                 <li class="llistitem"><span style="color:#56C94A;" >Welcome <%= current_user.fullname %></span></li>
               <% else %>
-                <li><%= link_to 'Register', sign_up_path %></li>
-                <li><%= link_to 'Log In', log_in_path %></li>
+                <li class="llistitem"><%= link_to 'Register', sign_up_path %></li>
+                <li class="llistitem"><%= link_to 'Log In', log_in_path %></li>
               <% end %>
               </ul>
               <% if current_user %>
-                <ul class="nav navbar-nav pull-right">
-                  <li><span><%= current_user.fullname %></span></li>
-                  <li><%= link_to 'Log Out', log_out_path, method: :delete %></li>
+                <ul class="pull-right llist">
+                  <li class="llistitem"><%= link_to 'Log Out', log_out_path, method: :delete %></li>
                 </ul>
               <% end %>
             </div>

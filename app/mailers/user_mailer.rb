@@ -9,7 +9,7 @@ class UserMailer < ApplicationMailer
   
   def activation_needed_email(user)
     @user = user
-    @url  = "https://my-serler-premila-2.c9.io/users/#{user.activation_token}/activate?id=#{user.id}"
+    @url  = "https://serler-staging-teamecho-1.c9.io/users/#{user.activation_token}/activate?id=#{user.id}"
     mail(to: @user.email, subject: "SERLER Account activation")
   end
 
@@ -20,7 +20,7 @@ class UserMailer < ApplicationMailer
   #
   def activation_success_email(user)
     @user = user
-    @url = "https://my-serler-premila-2.c9.io"
+    @url = "https://serler-staging-teamecho-1.c9.io"
     mail(to: @user.email, subject: "Your account is now activated")
   end
 end

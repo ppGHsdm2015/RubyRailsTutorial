@@ -17,7 +17,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.default_url_options = { host: 'https://my-serler-premila-2.c9.io/' }
+  config.action_mailer.default_url_options = { host: 'https://serler-staging-teamecho-1.c9.io/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     enable_starttls_auto: true,
