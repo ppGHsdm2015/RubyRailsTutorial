@@ -55,6 +55,10 @@
     margin: 0px;
 }
 
+.logo-sz{
+  width:284px;height:208px;
+}
+
 .llist {
     list-style-type: none;
     padding: 0px;
@@ -80,7 +84,7 @@
 
 
 .side-margin{
-  width:300px;
+  width:350px;
   background-color:gray;
 }
 
