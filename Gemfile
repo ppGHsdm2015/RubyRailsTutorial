@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Added for - SERLER
 # Use of html and bootstrap
-#gem 'html-rails'
+gem 'html-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 # font awesome
 gem 'font-awesome-rails'
