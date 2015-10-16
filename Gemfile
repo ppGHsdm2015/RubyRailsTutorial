@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Added for - SERLER
 # Use of html and bootstrap
-#gem 'html-rails'
+gem 'html-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 # font awesome
 gem 'font-awesome-rails'
@@ -16,7 +16,7 @@ gem 'delayed_job_active_record'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 
-# Use SCSS for stylesheets
+# Use SCSS for styleshgit ceets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
