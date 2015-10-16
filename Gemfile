@@ -10,7 +10,9 @@ gem 'carrierwave'
 gem 'sorcery'
 gem 'validates_email_format_of'
 gem 'delayed_job_active_record'
-gem  'tilt', '~> 1.3'
+gem 'tilt', '>= 1.3'
+gem 'execjs', '>= 1.3'
+gem 'sprockets', '>=2.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -69,5 +71,8 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'tilt', '>= 1.3'
+  gem 'execjs', '>= 1.3'
+  gem 'sprockets', '>=2.0'
 end
 
