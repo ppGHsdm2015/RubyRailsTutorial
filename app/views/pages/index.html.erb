@@ -1,3 +1,78 @@
-<h1>Welcome!</h1>
+<div class="container">
 
-<p>You have reached your workspace. Restricted area for authorized users only.</p>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#">Manage Users</a></li>
+    <li><a href="#">Manage Masters Data</a></li>
+    <li><a href="#">Manage Articles</a></li>
+    </ul>
+    <div class="panel panel-default panelforContent">
+    <div class="panel-body">
+        <div class="container">
+          <table class="table table-hover contentTable">
+            <thead>
+              <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Organisation</th>
+                <th>Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>john@example.com</td>
+                <td>AUT</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Admin
+                        <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Admin</a></li>
+                              <li><a href="#">Moderater</a></li>
+                              <li><a href="#">Analyst</a></li>
+                              <li><a href="#">User</a></li>
+                            </ul>
+                          </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Mary Moe</td>
+                <td>mary@example.com</td>
+                 <td>AUT</td>
+                <td>
+                     <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Moderater
+                        <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Admin</a></li>
+                              <li><a href="#">Moderater</a></li>
+                              <li><a href="#">Analyst</a></li>
+                              <li><a href="#">User</a></li>
+                            </ul>
+                          </div>
+                </td>
+              </tr>
+              <tr>
+                <td>July Dooley</td>
+                <td>july@example.com</td>
+                 <td>AUT</td>
+                <td>
+                     <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Analyst
+                        <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Admin</a></li>
+                              <li><a href="#">Moderater</a></li>
+                              <li><a href="#">Analyst</a></li>
+                              <li><a href="#">User</a></li>
+                          </ul>
+                          </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+       <button type="button" class="btn btn-success">Save</button>
+    </div>
+  </div>
+</div>
