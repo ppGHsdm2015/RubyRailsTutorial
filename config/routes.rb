@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
   
   get '/secret', to: 'pages#index', as: :secret
+  get 'listusers', to: 'users#index', as: :list_users
   get '/sign_up', to: 'users#new', as: :sign_up
   match ':controller(/:action(/:id))', :via => :get
   
