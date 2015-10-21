@@ -22,9 +22,25 @@
               <tr>
                 <td><%= user.fullname %></td>
                 <td><%= user.email %></td>
-                <td><%= user.organisation %></td>
-                <!--<td>
-                    <div class="dropdown">
+                 <td>
+                   <% if user.organisation == '' %>
+                     not provided
+                   <% else %>   
+                  <%= user.organisation %>
+                      <% end %>  
+                    </td>
+                <td>
+                   <% if user.roleID == 4 %>
+                     Admin
+                   <% elsif user.roleID == 3  %>
+                     Moderator
+                   <% elsif user.roleID == 2 %>
+                     Analyst
+                   <% elsif user.roleID == 1 %>
+                     User
+                  <% end %>   
+                    
+                    <!--<div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Admin
                         <span class="caret"></span></button>
                             <ul class="dropdown-menu">
@@ -33,14 +49,14 @@
                               <li><a href="#">Analyst</a></li>
                               <li><a href="#">User</a></li>
                             </ul>
-                          </div>
-                </td>-->
+                          </div>-->
+                </td>
               </tr>
               <% end %>
             </tbody>
           </table>
         </div>
-       <button type="button" class="btn btn-success">Save</button>
+       <!--<button type="button" class="btn btn-success">Save</button>-->
     </div>
   </div>
 </div>
