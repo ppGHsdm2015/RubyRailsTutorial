@@ -121,3 +121,8 @@
    width:20px;
 }
 
+.mandatory{
+  color:red;
+   text-decoration:bold;
+}
+

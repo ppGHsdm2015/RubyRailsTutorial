@@ -11,34 +11,25 @@
     </div>
   <% end %>
   <br/>
-    <br/>
   <div class="form-group">
-    <%= f.label :fullname %><div></div>
-    <%= f.text_field :fullname, class: 'form-control form-content', required: true %>
+    <p><b>Full Name </b><span class="mandatory">*</span></p>
+    <%= f.text_field :fullname, class: 'form-control form-content', id: 'txtname', required: true, maxlength:'50', onblur: 'checkFullname(this.value)' %>
   </div>
   <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control form-content', required: true %>
+    <p><b>Email </b><span class="mandatory">*</span></p>
+    <%= f.email_field :email, class: 'form-control form-content', id: 'txtemail', required: true, maxlength:'50', onblur: 'checkEmail(this.value)' %>
   </div>
   <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control form-content', required: true %>
+    <p><b>Password </b><span class="mandatory">*</span></p>
+    <%= f.password_field :password, class: 'form-control form-content', id: 'txtpwd',  required: true, maxlength:'15', onblur: 'checkPassword(this.value)' %>
   </div>
   <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: 'form-control form-content', required: true %>
+    <p><b>Password Confirmation</b><span class="mandatory">*</span></p>
+    <%= f.password_field :password_confirmation, class: 'form-control form-content', id: 'txtconpwd',  required: true, maxlength:'15', onblur: 'checkConPwd(this.value)' %>
   </div>
   <div class="form-group">
-    <%= f.label :organisation %>
-    <%= f.text_field :organisation, class: 'form-control form-content', required: false %>
-  </div>
-  <div class="form-group">
-    <%= f.radio_button :gender, 'M', checked: true %>Male
-    <%= f.radio_button :gender, 'F' %>Female
- </div>
- <div class="form-group">
-    <%= f.label :age %>
-    <%= f.text_field :age, class: 'form-control form-content', required: false %>
+    <p><b>Organisation</b></p>
+    <%= f.text_field :organisation, class: 'form-control form-content', id: 'txtorg', required: false, maxlength:'100' %>
   </div>
  <%= f.submit 'Register', class: 'btn btn-primary my-btn' %>
 <% end %>
