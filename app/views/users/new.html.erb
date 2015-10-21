@@ -21,10 +21,10 @@
   </div>
   <div class="form-group">
     <p><b>Password </b><span class="mandatory">*</span></p>
-    <%= f.password_field :password, class: 'form-control form-content', id: 'txtpwd',  required: true, maxlength:'15', onblur: 'checkPassword(this.value)' %>
+    <%= f.password_field :password, class: 'form-control form-content', id: 'txtpwd',  required: true, maxlength:'15', onblur: 'checkPassword(this.value)', data: {toggle: "tooltip", placement: "right" }, title: "Please enter a valid password with at least one number, one lowercase letter, one uppercase letter and between 6-15 characters" %>
   </div>
   <div class="form-group">
-    <p><b>Password Confirmation</b><span class="mandatory">*</span></p>
+    <p><b>Password Confirmation </b><span class="mandatory">*</span></p>
     <%= f.password_field :password_confirmation, class: 'form-control form-content', id: 'txtconpwd',  required: true, maxlength:'15', onblur: 'checkConPwd(this.value)' %>
   </div>
   <div class="form-group">

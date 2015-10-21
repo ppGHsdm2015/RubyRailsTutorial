@@ -16,6 +16,16 @@
 //= require turbolinks
 //= require_tree .
 
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+
 function checkFullname(val) {
     if (val == null || val == "") {
         alert("Please fill in your full name.");
